@@ -1,0 +1,22 @@
+PODS:
+  - Flutter (1.0.0)
+  - markdown_styled_widget (0.0.1):
+    - Flutter
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - markdown_styled_widget (from `.symlinks/plugins/markdown_styled_widget/ios`)
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  markdown_styled_widget:
+    :path: ".symlinks/plugins/markdown_styled_widget/ios"
+
+SPEC CHECKSUMS:
+  Flutter: 50d75fe2f02b26cc09d224853bb45737f8b3214a
+  markdown_styled_widget: 1e730aad98469a40c9da3557c537cea53d7e06eb
+
+PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
+
+COCOAPODS: 1.11.3
