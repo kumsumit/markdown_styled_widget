@@ -30,40 +30,34 @@ flutter:
       web:
         pluginClass: MarkdownStyledWidgetWeb
         fileName: markdown_styled_widget_web.dart
-
-   fonts:
-     - family: Roboto
-       fonts:
-         - asset: fonts/Roboto/Roboto-Regular.ttf
-         - asset: fonts/Roboto/Roboto-Italic.ttf
-           style: italic
-         - asset: fonts/Roboto/Roboto-Medium.ttf
-           weight: 500
-         - asset: fonts/Roboto/Roboto-MediumItalic.ttf
-           style: italic
-           weight: 500
-         - asset: fonts/Roboto/Roboto-Bold.ttf
-           weight: 700
-         - asset: fonts/Roboto/Roboto-BoldItalic.ttf
-           style: italic
-           weight: 700
-     - family: IbarraRealNova
-       fonts:
-         - asset: fonts/IbarraRealNova/Roboto-Regular.ttf
-         - asset: fonts/IbarraRealNova/IbarraRealNova-Italic.ttf
-           style: italic
-         - asset: fonts/IbarraRealNova/IbarraRealNova-Bold.ttf
-           weight: 700
-         - asset: fonts/IbarraRealNova/IbarraRealNova-BoldItalic.ttf
-           style: italic
-           weight: 700
-     - family: RobotoMono
-       fonts:
-         - asset: fonts/RobotoMono/RobotoMono-Regular.ttf
-         - asset: fonts/RobotoMono/RobotoMono-Italic.ttf
-           style: italic
-         - asset: fonts/RobotoMono/RobotoMono-Bold.ttf
-           weight: 700
-         - asset: fonts/RobotoMono/RobotoMono-BoldItalic.ttf
-           style: italic
-           weight: 700
+  fonts:
+    - family: Roboto
+      fonts:
+        - asset: fonts/Roboto/Roboto-Regular.ttf
+        - asset: fonts/Roboto/Roboto-Italic.ttf
+          style: italic
+        - asset: fonts/Roboto/Roboto-Medium.ttf
+          weight: 500
+        - asset: fonts/Roboto/Roboto-MediumItalic.ttf
+          style: italic
+          weight: 500
+        - asset: fonts/Roboto/Roboto-Bold.ttf
+          weight: 700
+        - asset: fonts/Roboto/Roboto-BoldItalic.ttf
+          style: italic
+          weight: 700
+    - family: IbarraRealNova
+      fonts:
+        - asset: fonts/IbarraRealNova/IbarraRealNova-Regular.ttf
+        - asset: fonts/IbarraRealNova/IbarraRealNova-Italic.ttf
+          style: italic
+        - asset: fonts/IbarraRealNova/IbarraRealNova-Bold.ttf
+          weight: 700
+        - asset: fonts/IbarraRealNova/IbarraRealNova-BoldItalic.ttf
+          style: italic
+          weight: 700
+    - family: RobotoMono
+      fonts:
+        - asset: fonts/RobotoMono/RobotoMono-Regular.ttf
+        - asset: fonts/RobotoMono/RobotoMono-Bold.ttf
+          weight: 700

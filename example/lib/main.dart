@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'dart:async';
-
-import 'package:flutter/services.dart';
 import 'package:markdown_styled_widget/UI/markdown_styled_widget.dart';
-import 'package:markdown_styled_widget/UI/markdown_styled_widget_styles.dart';
 
 void main() {
   runApp(const MyApp());
@@ -42,10 +38,7 @@ class _MyAppState extends State<MyApp> {
                   },
                 ),
               ),
-              const Divider(height: 10),
-              // Container(
-                // child: SingleChildScrollView(
-                  
+              const Divider(thickness: 5),
               Expanded(
                 child: SingleChildScrollView(
                   child: MarkdownStyledWidget(text)

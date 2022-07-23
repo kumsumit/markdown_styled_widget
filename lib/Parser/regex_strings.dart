@@ -16,4 +16,6 @@ class RegexStrings {
 
   static const String codeSingleline = r'`([^`]+)`';
   static const String codeMultiline = r'^`{3}';
+
+  static const String line = r'^[-*_]{3}$';
 }

@@ -1,102 +1,116 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 class MarkdownStyledWidgetStyles {
-  final int fontSize;
+  final double fontSize;
 
   final String defaultFont;
-  final int defaultWeight;
+  final FontWeight defaultWeight;
   final Color defaultForeground;
 
-  final int boldWeight;
+  final FontWeight boldWeight;
   final Color boldForeground;
 
   final Color linkForeground;
 
   final String blockquoteFont;
-  final int blockquoteSize;
+  final double blockquoteSize;
   final Color blockquoteBackground;
   final Color blockquoteForeground;
   final Color blockquoteBorderColor;
-  final int blockquoteBorderSize;
+  final double blockquoteBorderSize;
+  final double blockquotePadding;
 
   final Color codeBackground;
+  final double codePadding;
+  final double codeBorderRadius;
   final Color codeForeground;
   final String codeFont;
-  final int codeWeight;
+  final FontWeight codeWeight;
 
-  final int heading1Size;
+  final double heading1Size;
   final bool heading1Line;
-  final int heading1Weight;
+  final FontWeight heading1Weight;
 
-  final int heading2Size;
+  final double heading2Size;
   final bool heading2Line;
-  final int heading2Weight;
+  final FontWeight heading2Weight;
 
-  final int heading3Size;
+  final double heading3Size;
   final bool heading3Line;
-  final int heading3Weight;
+  final FontWeight heading3Weight;
 
-  final int heading4Size;
+  final double heading4Size;
   final bool heading4Line;
-  final int heading4Weight;
+  final FontWeight heading4Weight;
 
-  final int heading5Size;
+  final double heading5Size;
   final bool heading5Line;
-  final int heading5Weight;
+  final FontWeight heading5Weight;
 
-  final int heading6Size;
+  final double heading6Size;
   final bool heading6Line;
-  final int heading6Weight;
+  final FontWeight heading6Weight;
 
-  final int lineHeight;
+  final double lineHeight;
+  final Color lineColor;
+
+  final double spaceSize;
 
   const MarkdownStyledWidgetStyles({
-    this.fontSize = 8,
+    this.fontSize = 16,
     this.defaultFont = 'Roboto',
-    this.defaultWeight = 400,
+    this.defaultWeight = FontWeight.normal,
     this.defaultForeground = Colors.black,
 
-    this.boldWeight = 700,
+    this.boldWeight = FontWeight.bold,
     this.boldForeground = Colors.black54,
 
     this.linkForeground = Colors.blueAccent,
 
     this.blockquoteFont = 'IbarraRealNova',
-    this.blockquoteSize = 8,
+    this.blockquoteSize = 12,
     this.blockquoteBackground = Colors.grey,
     this.blockquoteForeground = Colors.black54,
     this.blockquoteBorderColor = Colors.blueGrey,
     this.blockquoteBorderSize = 10,
+    this.blockquotePadding = 10,
 
-    this.codeBackground = Colors.grey,
-    this.codeForeground = Colors.black26,
+    this.codeBackground = Colors.black12,
+    this.codePadding = 10,
+    this.codeBorderRadius = 10,
+    this.codeForeground = Colors.black87,
     this.codeFont = 'RobotoMono',
-    this.codeWeight = 400,
+    this.codeWeight = FontWeight.normal,
 
-    this.heading1Size = 24,
+    this.heading1Size = 32,
     this.heading1Line = true,
-    this.heading1Weight = 500,
+    this.heading1Weight = FontWeight.w500,
 
-    this.heading2Size = 20,
+    this.heading2Size = 28,
     this.heading2Line = true,
-    this.heading2Weight = 500,
+    this.heading2Weight = FontWeight.w500,
 
-    this.heading3Size = 16,
+    this.heading3Size = 24,
     this.heading3Line = false,
-    this.heading3Weight = 500,
+    this.heading3Weight = FontWeight.w500,
 
-    this.heading4Size = 12,
+    this.heading4Size = 20,
     this.heading4Line = false,
-    this.heading4Weight = 500,
+    this.heading4Weight = FontWeight.w500,
 
-    this.heading5Size = 8,
+    this.heading5Size = 16,
     this.heading5Line = false,
-    this.heading5Weight = 500,
+    this.heading5Weight = FontWeight.w500,
 
-    this.heading6Size = 6,
+    this.heading6Size = 12,
     this.heading6Line = false,
-    this.heading6Weight = 500,
+    this.heading6Weight = FontWeight.w500,
 
     this.lineHeight = 1,
+    this.lineColor = Colors.grey,
+
+    this.spaceSize = 10,
   });
 }

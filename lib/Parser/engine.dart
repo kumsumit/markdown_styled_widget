@@ -1,3 +1,4 @@
+import 'package:markdown_styled_widget/Parser/Tokens/line.dart';
 import 'package:markdown_styled_widget/Parser/Tokens/blockquote.dart';
 import 'package:markdown_styled_widget/Parser/Tokens/code_multiline.dart';
 import 'package:markdown_styled_widget/Parser/Tokens/heading.dart';
@@ -19,6 +20,7 @@ class Engine {
   static final RegExp _blockquote = RegExp(RegexStrings.blockquote);
   static final RegExp _image = RegExp(RegexStrings.image);
   static final RegExp _codeMultiline = RegExp(RegexStrings.codeMultiline);
+  static final RegExp _line = RegExp(RegexStrings.line);
 
   static final RegExp _italic = RegExp(RegexStrings.italic);
   static final RegExp _bold = RegExp(RegexStrings.bold);
@@ -33,8 +35,6 @@ class Engine {
     String code = '';
 
     for (var line in lines) {
-      line = line.trim();
-
       if (isCode) {
         if (_codeMultiline.hasMatch(line)) {
           isCode = false;
@@ -46,9 +46,13 @@ class Engine {
 
         continue;
       }
-      
+
+      line = line.trim();
+
       if (line == '') {
         continue;
+      } else if (_line.hasMatch(line)) {
+        tokens.add(Line());
       } else if (_header1.hasMatch(line)) {
         final match = _header1.firstMatch(line);
         if (match != null) {
