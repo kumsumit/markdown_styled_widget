@@ -1,3 +1,4 @@
+import 'package:markdown_styled_widget/Parser/Tokens/spans.dart';
 import 'package:markdown_styled_widget/Parser/Tokens/token.dart';
 
 enum HeadingType {
@@ -10,8 +11,8 @@ enum HeadingType {
 }
 
 class Heading extends Token {
-  final String text;
+  final List<Span> spans;
   final HeadingType type;
 
-  Heading(this.text, { this.type = HeadingType.heading1 });
+  Heading(this.spans, { this.type = HeadingType.heading1 });
 }

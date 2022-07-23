@@ -31,16 +31,26 @@ class _MyAppState extends State<MyApp> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              TextField(
-                keyboardType: TextInputType.multiline,
-                maxLines: null,
-                onChanged: (v) {
-                  setState(() {
-                    text = v;
-                  });
-                },
+              Expanded(
+                child: TextField(
+                  keyboardType: TextInputType.multiline,
+                  maxLines: null,
+                  onChanged: (v) {
+                    setState(() {
+                      text = v;
+                    });
+                  },
+                ),
               ),
-              MarkdownStyledWidget(text),
+              const Divider(height: 10),
+              // Container(
+                // child: SingleChildScrollView(
+                  
+              Expanded(
+                child: SingleChildScrollView(
+                  child: MarkdownStyledWidget(text)
+                )
+              ),
             ],
           ),
         ),
