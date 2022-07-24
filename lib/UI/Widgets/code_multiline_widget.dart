@@ -33,7 +33,6 @@ class CodeMultilineWidget extends StatelessWidget {
       child: Text(text,
         style: TextStyle(
           color: foreground,
-          package: 'markdown_styled_widget',
           fontFamily: font,
           fontSize: fontSize,
           fontWeight: fontWeight,

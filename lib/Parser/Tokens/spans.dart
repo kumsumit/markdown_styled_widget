@@ -1,31 +1,36 @@
 class Span {
-  final String text;
+  final List<Span> spans;
 
-  final bool bold;
-  final bool italic;
-
-  Span(this.text, this.bold, this.italic);
+  Span(this.spans);
 }
 
 class CommonSpan extends Span {
-  CommonSpan(String text, {
-    bool bold = false,
-    bool italic = false,
-  }) : super(text, bold, italic);
+  CommonSpan(List<Span> spans) : super(spans);
+}
+
+class BoldSpan extends Span {
+  BoldSpan(List<Span> spans) : super(spans);
+}
+
+class ItalicSpan extends Span {
+  ItalicSpan(List<Span> spans) : super(spans);
 }
 
 class CodeSpan extends Span {
-  CodeSpan(String text, {
-    bool bold = false,
-    bool italic = false,
-  }) : super(text, bold, italic);
+  CodeSpan(List<Span> spans) : super(spans);
 }
 
 class LinkSpan extends Span {
   final String link;
 
-  LinkSpan(String text, this.link, {
-    bool bold = false,
-    bool italic = false,
-  }) : super(text, bold, italic);
+  LinkSpan({
+    required List<Span> spans,
+    required this.link,
+  }) : super(spans);
+}
+
+class TextSpan extends Span {
+  String text;
+
+  TextSpan(this.text): super([]);
 }

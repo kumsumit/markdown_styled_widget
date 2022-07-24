@@ -109,7 +109,7 @@ class Engine {
 
   static List<Span> _parseSpans(String? text) {
     if (text != null) {
-      List<Span> spans = [CommonSpan(text)];
+      List<Span> spans = [CommonSpan([TextSpan(text)])];
       return spans;
     }
 

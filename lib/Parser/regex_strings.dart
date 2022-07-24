@@ -1,5 +1,5 @@
 class RegexStrings {
-  static const String italic = r'(\*{1}(.+)\*{1}|\_{1}(.+)\_{1})';
+  static const String italic = r'(\*{1}([^\*\n]+)\*{1}|\_{1}([^\_\n]+)\_{1})';
   static const String bold = r'(\*{2}([^\*\n]+)\*{2}|\_{2}([^\_\n]+)\_{2})';
 
   static const String header1 = r'^ *#{1} +(.*)';

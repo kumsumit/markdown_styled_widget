@@ -60,7 +60,7 @@ class MarkdownStyledWidgetStyles {
 
   const MarkdownStyledWidgetStyles({
     this.fontSize = 16,
-    this.defaultFont = 'Roboto',
+    this.defaultFont = 'packages/markdown_styled_widget/Roboto',
     this.defaultWeight = FontWeight.normal,
     this.defaultForeground = Colors.black,
 
@@ -69,7 +69,7 @@ class MarkdownStyledWidgetStyles {
 
     this.linkForeground = Colors.blueAccent,
 
-    this.blockquoteFont = 'IbarraRealNova',
+    this.blockquoteFont = 'packages/markdown_styled_widget/IbarraRealNova',
     this.blockquoteSize = 12,
     this.blockquoteBackground = Colors.grey,
     this.blockquoteForeground = Colors.black54,
@@ -81,7 +81,7 @@ class MarkdownStyledWidgetStyles {
     this.codePadding = 10,
     this.codeBorderRadius = 10,
     this.codeForeground = Colors.black87,
-    this.codeFont = 'RobotoMono',
+    this.codeFont = 'packages/markdown_styled_widget/RobotoMono',
     this.codeWeight = FontWeight.normal,
 
     this.heading1Size = 32,
