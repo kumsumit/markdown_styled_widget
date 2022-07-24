@@ -57,7 +57,7 @@ class TextWidget extends StatelessWidget {
     );
 
     italicStyle = const TextStyle(
-      decoration: TextDecoration.underline,
+      fontStyle: FontStyle.italic,
     );
 
     linkStyle = TextStyle(
