@@ -11,7 +11,7 @@ class RegexStrings {
 
   static const String blockquote = r'^ *>+ +(.+)';
 
-  static const String link = r'(\[.*\])(\((http)(?:s)?(\:\/\/).*\))';
+  static const String link = r'(\[(.*)\])(\(((http)(?:s)?(\:\/\/).*)\))';
   static const String image = r'^(\!)(\[(?:.*)?\])(\((.*(\.(jpg|png|gif|tiff|bmp).*))\))';
 
   static const String codeSingleline = r'`([^`]+)`';

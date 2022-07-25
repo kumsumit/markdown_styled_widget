@@ -5,6 +5,7 @@ import 'package:markdown_styled_widget/Parser/Tokens/heading.dart';
 import 'package:markdown_styled_widget/Parser/Tokens/paragraph.dart';
 import 'package:markdown_styled_widget/Parser/Tokens/spans.dart';
 import 'package:markdown_styled_widget/Parser/regex_strings.dart';
+import 'package:markdown_styled_widget/Parser/type_of_text.dart';
 
 import 'Tokens/image.dart';
 import 'Tokens/token.dart';
@@ -109,10 +110,71 @@ class Engine {
 
   static List<Span> _parseSpans(String? text) {
     if (text != null) {
-      List<Span> spans = [CommonSpan([TextSpan(text)])];
-      return spans;
+      List<Span> spans = [];
+
+      while (text != "" && text != null) {
+        var code = _codeSingleline.firstMatch(text);
+        var link = _link.firstMatch(text);
+        var bold = _bold.firstMatch(text);
+        var italic = _italic.firstMatch(text);
+
+        int minStart = text.length;
+        TypeOfText typeOfText = TypeOfText.common;
+
+        if (code != null && code.start < minStart) {
+          minStart = code.start;
+          typeOfText = TypeOfText.code;
+        }
+        if (link != null && link.start < minStart) {
+          minStart = link.start;
+          typeOfText = TypeOfText.link;
+        }
+        if (bold != null && bold.start < minStart) {
+          minStart = bold.start;
+          typeOfText = TypeOfText.bold;
+        }
+        if (italic != null && italic.start < minStart) {
+          minStart = italic.start;
+          typeOfText = TypeOfText.italic;
+        }
+
+        switch(typeOfText) {
+          case TypeOfText.common:
+            spans.add(TextSpan(text));
+            text = "";
+            break;
+          case TypeOfText.code:
+            spans.add(TextSpan(text.substring(0, code!.start)));
+            spans.add(CodeSpan([TextSpan(code.group(1)!)]));
+            text = text.substring(code.end);
+            break;
+          case TypeOfText.link:
+            spans.add(TextSpan(text.substring(0, link!.start)));
+            spans.add(LinkSpan(
+              spans: _parseSpans(link.group(2)),
+              link: link.group(4)!,
+            ));
+            text = text.substring(link.end);
+            break;
+          case TypeOfText.bold:
+            spans.add(TextSpan(text.substring(0, bold!.start)));
+            spans.add(BoldSpan(_parseSpans(bold.group(2))));
+            spans.add(BoldSpan(_parseSpans(bold.group(3))));
+            text = text.substring(bold.end);
+            break;
+          case TypeOfText.italic:
+            spans.add(TextSpan(text.substring(0, italic!.start)));
+            spans.add(ItalicSpan(_parseSpans(italic.group(2))));
+            spans.add(ItalicSpan(_parseSpans(italic.group(3))));
+            text = text.substring(italic.end);
+            break;
+        }
+      }
+
+      return [CommonSpan(spans)];
     }
 
     return [];
   }
+
 }

@@ -70,7 +70,7 @@ class MarkdownStyledWidgetStyles {
     this.linkForeground = Colors.blueAccent,
 
     this.blockquoteFont = 'packages/markdown_styled_widget/IbarraRealNova',
-    this.blockquoteSize = 12,
+    this.blockquoteSize = 16,
     this.blockquoteBackground = Colors.grey,
     this.blockquoteForeground = Colors.black54,
     this.blockquoteBorderColor = Colors.blueGrey,

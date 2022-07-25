@@ -1,9 +1,8 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_html/flutter_html.dart';
 import 'package:markdown_styled_widget/Parser/Tokens/spans.dart' as span;
 import 'package:url_launcher/url_launcher.dart';
 
-// ignore: must_be_immutable
 class TextWidget extends StatelessWidget {
   final List<span.Span> spans;
 
@@ -21,13 +20,7 @@ class TextWidget extends StatelessWidget {
   final String codeFont;
   final FontWeight codeWeight;
 
-  late TextStyle defaultStyle;
-  late TextStyle boldStyle;
-  late TextStyle italicStyle;
-  late TextStyle linkStyle;
-  late TextStyle codeStyle;
-
-  TextWidget({
+  const TextWidget({
     Key? key,
     required this.spans,
     required this.fontSize,
@@ -43,99 +36,63 @@ class TextWidget extends StatelessWidget {
     required this.codeForeground,
     required this.codeFont,
     required this.codeWeight,
-  }) : super(key: key) {
-    defaultStyle = TextStyle(
-      fontSize: fontSize,
-      fontFamily: font,
-      fontWeight: weight,
-      color: foreground,
-    );
-
-    boldStyle = TextStyle(
-      fontWeight: boldWeight,
-      color: boldForeground,
-    );
-
-    italicStyle = const TextStyle(
-      fontStyle: FontStyle.italic,
-    );
-
-    linkStyle = TextStyle(
-      color: linkForeground,
-      decoration: TextDecoration.underline,
-    );
-
-    codeStyle = TextStyle(
-      color: codeForeground,
-      fontFamily: codeFont,
-      fontWeight: codeWeight,
-    );
-  }
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return RichText(
-      text: TextSpan(
-        children: parseText(spans)
-      ),
+    return Html(
+      data: '<p>${parseText(spans)}</p>',
+      onLinkTap: (String? url, _, __, ___) async {
+        if (url != null) {
+          Uri uri = Uri.parse(url);
+          if (await canLaunchUrl(uri)) {
+            await launchUrl(uri);
+          }
+        }
+      },
+      style: {
+        "p": Style(
+          fontSize: FontSize(fontSize),
+          fontFamily: font,
+          fontWeight: weight,
+          color: foreground,
+        ),
+        "b": Style(
+          fontWeight: boldWeight,
+          color: boldForeground,
+        ),
+        "a": Style(
+          color: linkForeground,
+          textDecoration: TextDecoration.underline,
+        ),
+        "code": Style(
+          fontFamily: codeFont,
+          fontWeight: codeWeight,
+          backgroundColor: codeBackground,
+        ),
+      },
     );
   }
   
-  List<TextSpan> parseText(List<span.Span> spans) {
-    List<TextSpan> children = [];
+  String parseText(List<span.Span> spans) {
+    String result = '';
 
     for (var s in spans) {
-      if (s is span.TextSpan) {
-        children.add(
-          TextSpan(
-            text: s.text
-          )
-        );
-      } else if (s is span.CommonSpan) {
-        children.add(
-          TextSpan(
-            style: defaultStyle,
-            children: parseText(s.spans),
-          )
-        );
+      if (s is span.CommonSpan) {
+        result += parseText(s.spans);
       } else if (s is span.BoldSpan) {
-        children.add(
-          TextSpan(
-            style: boldStyle,
-            children: parseText(s.spans),
-          )
-        );
+        result += '<b>${parseText(s.spans)}</b>';
       } else if (s is span.ItalicSpan) {
-        children.add(
-          TextSpan(
-            style: italicStyle,
-            children: parseText(s.spans),
-          )
-        );
+        result += '<i>${parseText(s.spans)}</i>';
       } else if (s is span.CodeSpan) {
-        children.add(
-          TextSpan(
-            style: codeStyle,
-            children: parseText(s.spans),
-          )
-        );
+        result += '<code>${parseText(s.spans)}</code>';
       } else if (s is span.LinkSpan) {
-        children.add(
-          TextSpan(
-            style: linkStyle,
-            children: parseText(s.spans),
-            recognizer: TapGestureRecognizer()
-              ..onTap = () async {
-                final url = Uri.parse(s.link);
-                if (await canLaunchUrl(url)) {
-                  await launchUrl(url);
-                }
-              },
-          )
-        );
+        result += '<a href="${s.link}">${parseText(s.spans)}</a>';
+      } else if (s is span.TextSpan) {
+        result += s.text;
       }
     }
 
-    return children;
+    return result;
   }
 }
