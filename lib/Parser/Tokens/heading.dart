@@ -14,5 +14,5 @@ class Heading extends Token {
   final List<Span> spans;
   final HeadingType type;
 
-  Heading(this.spans, { this.type = HeadingType.heading1 });
+  Heading(this.spans, {this.type = HeadingType.heading1});
 }

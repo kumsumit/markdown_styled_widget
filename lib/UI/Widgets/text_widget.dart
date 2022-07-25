@@ -74,7 +74,7 @@ class TextWidget extends StatelessWidget {
       },
     );
   }
-  
+
   String parseText(List<span.Span> spans) {
     String result = '';
 

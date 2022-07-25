@@ -3,7 +3,8 @@ import 'package:markdown_styled_widget/Parser/Tokens/blockquote.dart';
 import 'package:markdown_styled_widget/Parser/Tokens/heading.dart';
 import 'package:markdown_styled_widget/Parser/Tokens/line.dart';
 import 'package:markdown_styled_widget/Parser/Tokens/image.dart' as image;
-import 'package:markdown_styled_widget/Parser/Tokens/paragraph.dart' as paragraph;
+import 'package:markdown_styled_widget/Parser/Tokens/paragraph.dart'
+    as paragraph;
 import 'package:markdown_styled_widget/Parser/Tokens/code_multiline.dart';
 import 'package:markdown_styled_widget/Parser/engine.dart';
 import 'package:markdown_styled_widget/UI/Widgets/blockquote_widget.dart';
@@ -29,10 +30,12 @@ import 'package:markdown_styled_widget/UI/Widgets/code_multiline_widget.dart';
 class MarkdownStyledWidget extends StatelessWidget {
   /// Text to parse and showing it as a widget.
   final String text;
+
   /// Styles of a widget.
   final MarkdownStyledWidgetStyles style;
 
-  const MarkdownStyledWidget(this.text, {
+  const MarkdownStyledWidget(
+    this.text, {
     this.style = const MarkdownStyledWidgetStyles(),
     Key? key,
   }) : super(key: key);
@@ -86,23 +89,33 @@ class MarkdownStyledWidget extends StatelessWidget {
               children: [
                 HeadingWidget(
                   spans: token.spans,
-                  fontSize:
-                    token.type == HeadingType.heading1 ? style.heading1Size :
-                    token.type == HeadingType.heading2 ? style.heading2Size :
-                    token.type == HeadingType.heading3 ? style.heading3Size :
-                    token.type == HeadingType.heading4 ? style.heading4Size :
-                    token.type == HeadingType.heading5 ? style.heading5Size :
-                    token.type == HeadingType.heading6 ? style.heading6Size :
-                    style.fontSize,
+                  fontSize: token.type == HeadingType.heading1
+                      ? style.heading1Size
+                      : token.type == HeadingType.heading2
+                          ? style.heading2Size
+                          : token.type == HeadingType.heading3
+                              ? style.heading3Size
+                              : token.type == HeadingType.heading4
+                                  ? style.heading4Size
+                                  : token.type == HeadingType.heading5
+                                      ? style.heading5Size
+                                      : token.type == HeadingType.heading6
+                                          ? style.heading6Size
+                                          : style.fontSize,
                   font: style.defaultFont,
-                  weight:
-                    token.type == HeadingType.heading1 ? style.heading1Weight :
-                    token.type == HeadingType.heading2 ? style.heading2Weight :
-                    token.type == HeadingType.heading3 ? style.heading3Weight :
-                    token.type == HeadingType.heading4 ? style.heading4Weight :
-                    token.type == HeadingType.heading5 ? style.heading5Weight :
-                    token.type == HeadingType.heading6 ? style.heading6Weight :
-                    style.defaultWeight,
+                  weight: token.type == HeadingType.heading1
+                      ? style.heading1Weight
+                      : token.type == HeadingType.heading2
+                          ? style.heading2Weight
+                          : token.type == HeadingType.heading3
+                              ? style.heading3Weight
+                              : token.type == HeadingType.heading4
+                                  ? style.heading4Weight
+                                  : token.type == HeadingType.heading5
+                                      ? style.heading5Weight
+                                      : token.type == HeadingType.heading6
+                                          ? style.heading6Weight
+                                          : style.defaultWeight,
                   foreground: style.defaultForeground,
                   boldWeight: style.boldWeight,
                   boldForeground: style.boldForeground,
@@ -113,14 +126,19 @@ class MarkdownStyledWidget extends StatelessWidget {
                   codeForeground: style.codeForeground,
                   codeFont: style.codeFont,
                   codeWeight: style.codeWeight,
-                  hasLine:
-                    token.type == HeadingType.heading1 ? style.heading1Line :
-                    token.type == HeadingType.heading2 ? style.heading2Line :
-                    token.type == HeadingType.heading3 ? style.heading3Line :
-                    token.type == HeadingType.heading4 ? style.heading4Line :
-                    token.type == HeadingType.heading5 ? style.heading5Line :
-                    token.type == HeadingType.heading6 ? style.heading6Line :
-                    false,
+                  hasLine: token.type == HeadingType.heading1
+                      ? style.heading1Line
+                      : token.type == HeadingType.heading2
+                          ? style.heading2Line
+                          : token.type == HeadingType.heading3
+                              ? style.heading3Line
+                              : token.type == HeadingType.heading4
+                                  ? style.heading4Line
+                                  : token.type == HeadingType.heading5
+                                      ? style.heading5Line
+                                      : token.type == HeadingType.heading6
+                                          ? style.heading6Line
+                                          : false,
                   lineHeight: style.lineHeight,
                   lineColor: style.lineColor,
                 ),

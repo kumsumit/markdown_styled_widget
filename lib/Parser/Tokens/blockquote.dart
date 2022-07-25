@@ -5,5 +5,5 @@ class Blockquote extends Token {
   final List<Span> spans;
   final int blockquoteLevel;
 
-  Blockquote(this.spans, { this.blockquoteLevel = 1 });
+  Blockquote(this.spans, {this.blockquoteLevel = 1});
 }

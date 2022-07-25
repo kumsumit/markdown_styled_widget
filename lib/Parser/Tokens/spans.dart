@@ -32,5 +32,5 @@ class LinkSpan extends Span {
 class TextSpan extends Span {
   String text;
 
-  TextSpan(this.text): super([]);
+  TextSpan(this.text) : super([]);
 }

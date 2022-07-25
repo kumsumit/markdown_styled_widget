@@ -30,7 +30,8 @@ class CodeMultilineWidget extends StatelessWidget {
         borderRadius: BorderRadius.circular(borderRadius),
         color: background,
       ),
-      child: Text(text,
+      child: Text(
+        text,
         style: TextStyle(
           color: foreground,
           fontFamily: font,

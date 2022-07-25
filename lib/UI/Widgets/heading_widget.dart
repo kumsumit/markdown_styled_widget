@@ -65,10 +65,7 @@ class HeadingWidget extends StatelessWidget {
           codeFont: codeFont,
           codeWeight: codeWeight,
         ),
-        if (hasLine) LineWidget(
-          lineHeight: lineHeight,
-          color: lineColor
-        ),
+        if (hasLine) LineWidget(lineHeight: lineHeight, color: lineColor),
       ],
     );
   }

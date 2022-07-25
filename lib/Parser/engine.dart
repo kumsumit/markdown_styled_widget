@@ -57,32 +57,38 @@ class Engine {
       } else if (_header1.hasMatch(line)) {
         final match = _header1.firstMatch(line);
         if (match != null) {
-          tokens.add(Heading(_parseSpans(match.group(1)), type: HeadingType.heading1));
+          tokens.add(
+              Heading(_parseSpans(match.group(1)), type: HeadingType.heading1));
         }
       } else if (_header2.hasMatch(line)) {
         final match = _header2.firstMatch(line);
         if (match != null) {
-          tokens.add(Heading(_parseSpans(match.group(1)), type: HeadingType.heading2));
+          tokens.add(
+              Heading(_parseSpans(match.group(1)), type: HeadingType.heading2));
         }
       } else if (_header3.hasMatch(line)) {
         final match = _header3.firstMatch(line);
         if (match != null) {
-          tokens.add(Heading(_parseSpans(match.group(1)), type: HeadingType.heading3));
+          tokens.add(
+              Heading(_parseSpans(match.group(1)), type: HeadingType.heading3));
         }
       } else if (_header4.hasMatch(line)) {
         final match = _header4.firstMatch(line);
         if (match != null) {
-          tokens.add(Heading(_parseSpans(match.group(1)), type: HeadingType.heading4));
+          tokens.add(
+              Heading(_parseSpans(match.group(1)), type: HeadingType.heading4));
         }
       } else if (_header5.hasMatch(line)) {
         final match = _header5.firstMatch(line);
         if (match != null) {
-          tokens.add(Heading(_parseSpans(match.group(1)), type: HeadingType.heading5));
+          tokens.add(
+              Heading(_parseSpans(match.group(1)), type: HeadingType.heading5));
         }
       } else if (_header6.hasMatch(line)) {
         final match = _header6.firstMatch(line);
         if (match != null) {
-          tokens.add(Heading(_parseSpans(match.group(1)), type: HeadingType.heading6));
+          tokens.add(
+              Heading(_parseSpans(match.group(1)), type: HeadingType.heading6));
         }
       } else if (_codeMultiline.hasMatch(line)) {
         isCode = true;
@@ -138,7 +144,7 @@ class Engine {
           typeOfText = TypeOfText.italic;
         }
 
-        switch(typeOfText) {
+        switch (typeOfText) {
           case TypeOfText.common:
             spans.add(TextSpan(text));
             text = "";
@@ -176,5 +182,4 @@ class Engine {
 
     return [];
   }
-
 }

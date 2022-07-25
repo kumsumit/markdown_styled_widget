@@ -40,10 +40,8 @@ class _MyAppState extends State<MyApp> {
               ),
               const Divider(thickness: 5),
               Expanded(
-                child: SingleChildScrollView(
-                  child: MarkdownStyledWidget(text)
-                )
-              ),
+                  child:
+                      SingleChildScrollView(child: MarkdownStyledWidget(text))),
             ],
           ),
         ),
