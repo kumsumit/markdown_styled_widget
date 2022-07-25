@@ -10,3 +10,7 @@
 ## 0.0.1+2
 
 * Add title image to readme
+
+## 0.0.1+3
+
+* Make less strong regex engine for links and images
