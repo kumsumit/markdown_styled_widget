@@ -68,6 +68,7 @@ class TextWidget extends StatelessWidget {
         "code": Style(
           fontFamily: codeFont,
           fontWeight: codeWeight,
+          color: codeForeground,
           backgroundColor: codeBackground,
         ),
       },
