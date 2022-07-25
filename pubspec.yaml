@@ -1,6 +1,6 @@
 name: markdown_styled_widget
-description: A new Flutter plugin project.
-version: 0.0.1
+description: Widget for parsing and showing markdown markup with your own custom styles
+version: 0.0.1+1
 repository: https://github.com/Willsem/markdown_styled_widget
 
 environment:
