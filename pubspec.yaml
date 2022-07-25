@@ -1,6 +1,6 @@
 name: markdown_styled_widget
 description: Widget for parsing and showing markdown markup with your own custom styles
-version: 0.0.1+1
+version: 0.0.1+2
 repository: https://github.com/Willsem/markdown_styled_widget
 
 environment:

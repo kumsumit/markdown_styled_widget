@@ -2,6 +2,8 @@
 
 [![Pub Version](https://img.shields.io/pub/v/markdown_styled_widget?color=blue)](https://pub.dev/packages/markdown_styled_widget)
 
+![Title](./img/title.png)
+
 | Default example | Customization example |
 | --- | --- |
 | ![Example](./img/example.png "Default example") | ![Custom example](./img/example_custom.png "Customization example") |

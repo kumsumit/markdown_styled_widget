@@ -6,3 +6,7 @@
 
 * Fill readme
 * Set up color for inline code
+
+## 0.0.1+2
+
+* Add title image to readme
