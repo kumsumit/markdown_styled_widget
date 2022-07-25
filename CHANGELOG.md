@@ -14,3 +14,4 @@
 ## 0.0.1+3
 
 * Make less strong regex engine for links and images
+* Add documentation comments

@@ -14,8 +14,22 @@ import 'package:markdown_styled_widget/UI/Widgets/line_widget.dart';
 import 'package:markdown_styled_widget/UI/Widgets/image_widget.dart';
 import 'package:markdown_styled_widget/UI/Widgets/code_multiline_widget.dart';
 
+/// Widget which gets text and parse it by markdown and show by flutter widgets,
+/// which could be customize by using style with [MarkdownStyledWidgetStyles].
+///
+/// ```dart
+/// MarkdownStyledWidget(text)
+/// // or
+/// MarkdownStyleWidget(text,
+///   style: MarkdownStyledWidgetStyles(
+///     // put your styles here
+///   )
+/// )
+/// ```
 class MarkdownStyledWidget extends StatelessWidget {
+  /// Text to parse and showing it as a widget.
   final String text;
+  /// Styles of a widget.
   final MarkdownStyledWidgetStyles style;
 
   const MarkdownStyledWidget(this.text, {
