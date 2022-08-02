@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:markdown_styled_widget/UI/markdown_styled_widget.dart';
+import 'package:markdown_styled_widget/ui.dart';
 
 void main() {
   runApp(const MyApp());

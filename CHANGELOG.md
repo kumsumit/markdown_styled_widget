@@ -15,3 +15,7 @@
 
 * Make less strong regex engine for links and images
 * Add documentation comments
+
+## 0.0.2
+
+* Add export file to make imports easier
