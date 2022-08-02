@@ -1,21 +1,21 @@
 ## 0.0.1
 
-* Initialize widget
+* Initialized widget
 
 ## 0.0.1+1
 
-* Fill readme
+* Filled readme
 * Set up color for inline code
 
 ## 0.0.1+2
 
-* Add title image to readme
+* Added title image to readme
 
 ## 0.0.1+3
 
-* Make less strong regex engine for links and images
-* Add documentation comments
+* Maked less strong regex engine for links and images
+* Added documentation comments
 
 ## 0.0.2
 
-* Add export file to make imports easier
+* Added export file to make imports easier
