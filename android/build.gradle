@@ -1,15 +1,15 @@
-apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
+group = "com.markdown_styled_widget.markdown_styled_widget"
+version = "1.0-SNAPSHOT"
 buildscript {
-    ext.kotlin_version = '2.0.0'
+    ext.kotlin_version = "2.0.0"
     repositories {
         google()
         mavenCentral()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.5.1'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath("com.android.tools.build:gradle:8.5.1")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version")
     }
 }
 
@@ -19,6 +19,8 @@ allprojects {
         mavenCentral()
     }
 }
+apply plugin: "com.android.library"
+apply plugin: "kotlin-android"
 
 android {
     compileSdk 34
@@ -39,8 +41,9 @@ android {
     defaultConfig {
         minSdkVersion 21
     }
-}
 
-dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    dependencies {
+        implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    }
+
 }
