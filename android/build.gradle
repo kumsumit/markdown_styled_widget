@@ -1,9 +1,5 @@
-plugins {
-    id "com.android.library"
-    id "kotlin-android"
-}
-
-
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
 buildscript {
     ext.kotlin_version = '2.0.0'
     repositories {
