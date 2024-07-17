@@ -21,7 +21,7 @@ allprojects {
 }
 
 android {
-    compileSdkVersion 34
+    compileSdk 34
     namespace "com.markdown_styled_widget.markdown_styled_widget"
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
