@@ -11,7 +11,7 @@ class CodeMultilineWidget extends StatelessWidget {
   final FontWeight fontWeight;
 
   const CodeMultilineWidget({
-    Key? key,
+    super.key,
     required this.text,
     required this.background,
     required this.padding,
@@ -20,7 +20,7 @@ class CodeMultilineWidget extends StatelessWidget {
     required this.font,
     required this.fontSize,
     required this.fontWeight,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

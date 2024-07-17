@@ -5,10 +5,10 @@ class LineWidget extends StatelessWidget {
   final Color color;
 
   const LineWidget({
-    Key? key,
+    super.key,
     required this.lineHeight,
     required this.color,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

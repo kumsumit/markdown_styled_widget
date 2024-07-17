@@ -37,8 +37,8 @@ class MarkdownStyledWidget extends StatelessWidget {
   const MarkdownStyledWidget(
     this.text, {
     this.style = const MarkdownStyledWidgetStyles(),
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

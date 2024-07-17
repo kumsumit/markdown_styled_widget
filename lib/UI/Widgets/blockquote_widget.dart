@@ -24,7 +24,7 @@ class BlockquoteWidget extends StatelessWidget {
   final double blockquotePadding;
 
   const BlockquoteWidget({
-    Key? key,
+    super.key,
     required this.spans,
     required this.fontSize,
     required this.font,
@@ -43,7 +43,7 @@ class BlockquoteWidget extends StatelessWidget {
     required this.blockquoteBorderColor,
     required this.blockquoteBorderSize,
     required this.blockquotePadding,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -5,19 +5,19 @@ class Span {
 }
 
 class CommonSpan extends Span {
-  CommonSpan(List<Span> spans) : super(spans);
+  CommonSpan(super.spans);
 }
 
 class BoldSpan extends Span {
-  BoldSpan(List<Span> spans) : super(spans);
+  BoldSpan(super.spans);
 }
 
 class ItalicSpan extends Span {
-  ItalicSpan(List<Span> spans) : super(spans);
+  ItalicSpan(super.spans);
 }
 
 class CodeSpan extends Span {
-  CodeSpan(List<Span> spans) : super(spans);
+  CodeSpan(super.spans);
 }
 
 class LinkSpan extends Span {

@@ -21,7 +21,7 @@ class TextWidget extends StatelessWidget {
   final FontWeight codeWeight;
 
   const TextWidget({
-    Key? key,
+    super.key,
     required this.spans,
     required this.fontSize,
     required this.font,
@@ -36,7 +36,7 @@ class TextWidget extends StatelessWidget {
     required this.codeForeground,
     required this.codeFont,
     required this.codeWeight,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

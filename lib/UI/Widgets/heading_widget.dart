@@ -24,7 +24,7 @@ class HeadingWidget extends StatelessWidget {
   final Color lineColor;
 
   const HeadingWidget({
-    Key? key,
+    super.key,
     required this.spans,
     required this.fontSize,
     required this.font,
@@ -42,7 +42,7 @@ class HeadingWidget extends StatelessWidget {
     required this.hasLine,
     required this.lineHeight,
     required this.lineColor,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

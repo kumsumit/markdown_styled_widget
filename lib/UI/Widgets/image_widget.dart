@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class ImageWidget extends StatelessWidget {
   final String link;
 
-  const ImageWidget({Key? key, required this.link}) : super(key: key);
+  const ImageWidget({super.key, required this.link});
 
   @override
   Widget build(BuildContext context) {
