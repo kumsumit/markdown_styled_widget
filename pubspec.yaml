@@ -2,6 +2,7 @@ name: markdown_styled_widget
 description: Widget for parsing and showing markdown markup with your own custom styles
 version: 0.0.1+3
 repository: https://github.com/Willsem/markdown_styled_widget
+publish_to: none
 
 environment:
   sdk: ">=3.4.3 <4.0.0"
@@ -13,8 +14,9 @@ dependencies:
   flutter_web_plugins:
     sdk: flutter
   plugin_platform_interface: ^2.0.2
-  flutter_html: ^2.2.1
-  url_launcher: ^6.1.5
+  flutter_html:
+    git: https://github.com/kumsumit/flutter_html.git
+  url_launcher: ^6.3.0
 
 dev_dependencies:
   flutter_test:

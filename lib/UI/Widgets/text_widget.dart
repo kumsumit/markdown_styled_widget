@@ -42,8 +42,8 @@ class TextWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Html(
       data: '<p>${parseText(spans)}</p>',
-      onLinkTap: (String? url, _, __, ___) async {
-        if (url != null) {
+      onLinkTap: (String? url, _, __) async {
+           if (url != null) {
           Uri uri = Uri.parse(url);
           if (await canLaunchUrl(uri)) {
             await launchUrl(uri);
