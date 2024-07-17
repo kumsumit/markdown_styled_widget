@@ -1,5 +1,8 @@
-group 'com.markdown_styled_widget.markdown_styled_widget'
-version '1.0-SNAPSHOT'
+plugins {
+    id "com.android.library"
+    id "kotlin-android"
+}
+
 
 buildscript {
     ext.kotlin_version = '2.0.0'
@@ -21,12 +24,9 @@ rootProject.allprojects {
     }
 }
 
-apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android'
-
 android {
     compileSdkVersion 34
-
+    namespace "com.markdown_styled_widget.markdown_styled_widget"
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
